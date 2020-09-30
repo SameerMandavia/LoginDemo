@@ -1,0 +1,13 @@
+
+
+.form-group {
+  margin: 2% 2%;
+  max-width: 100%;
+
+}
+
+.form-control:focus {
+  box-shadow: 0 0 5px #1976D2;
+  border: 1px solid #1976D2;
+
+}

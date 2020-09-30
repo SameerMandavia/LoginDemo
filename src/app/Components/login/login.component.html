@@ -1,0 +1,91 @@
+<section>
+  <div>
+    <img class="image" [src]="[headerImgSrc]" alt="laptopImg" />
+  </div>
+
+<div class="container login-container">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-3 login-form-2">
+      <h3>Login</h3>
+      <form [formGroup]="loginForm">
+        <div class="form-group">
+           <input
+            name="userName"
+            type="text"
+            formControlName="userName"
+            class="form-control"
+            placeholder="Enter Username"
+          />
+        </div>
+        <!-- <div class="form-group">
+        <capstore-input 
+          
+          placeholder="Enter Username" 
+          type="text" 
+          id="userName"
+          class="form-control"
+          formControlName="userName">
+
+          </capstore-input>
+        </div> -->
+        <div *ngIf="
+                    loginForm.get('userName').hasError('required') &&
+                    loginForm.get('userName').touched">
+
+          <span>
+                <p class="alert alert-danger">Username is required*</p>
+          </span>
+        </div>
+        <div
+          *ngIf="
+                  loginForm.get('userName').hasError('minlength') &&
+                  loginForm.get('userName').touched">
+          <span>
+            <p class="alert alert-danger">
+                Please enter more than 2 Characters.*
+            </p>
+          </span>
+        </div>
+        <div class="form-group">
+          <input
+            name="password"
+            type="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter Password"
+          />
+        </div>
+        <div
+          *ngIf="
+            loginForm.get('password').hasError('required') &&
+            loginForm.get('password').touched
+          "
+        >
+          <span
+            ><div class="alert alert-danger">Password is required*</div></span
+          >
+        </div>
+
+       
+
+        <div class="form-group">
+          <!-- <button 
+            (click)="login()"
+            [disabled]="!loginForm.valid"
+            type="submit"
+            class="btn btn-primary"
+          >
+            Login
+          </button> -->
+          <button class="btn btn-primary"  (click)="login()" type="button" [disabled]="!loginForm.valid">
+            <span class="spinner-border spinner-border-sm" *ngIf="isLoading" role="status" aria-hidden="true"></span>
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- <spinner *ngIf="isLoading"></spinner> -->

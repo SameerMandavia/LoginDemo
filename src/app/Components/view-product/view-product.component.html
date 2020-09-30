@@ -1,0 +1,34 @@
+
+
+
+<div class="ProductDetails">
+        <div class="table-responsive">
+        <table class="table table-bordered  table-hover">
+            <thead>
+              <tr class="dataHeading">
+                <th scope="col">PRODUCT ID</th>
+                <th scope="col">PRODUCT NAME</th>
+                <th scope="col">PRODUCT TYPE</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">QUANTITY</th>
+                <th scope="col">TOTAL AMOUNT</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="dataAlignCenter">
+                <th scope="row">{{productByName.productItemId}}</th>
+                <td>{{productByName.productName}}</td>
+                <td>{{productByName.productType}}</td>
+                <td>{{productByName.amount|currency:'INR'}}</td>
+                <td><button (click)="addProduct(productByName)" class="btn btn-secondary btn-sm"><i class="fa fa-plus-circle"></i></button>{{quantity}}
+                    <button (click)="removeProduct(productByName)" [disabled]='quantity==1' class="btn btn-secondary btn-sm"><i class="fa fa-minus"></i></button></td>
+                
+                <td >{{totalAmount|currency:'INR'}}</td>
+                <td><button (click)="payment()" class="btn btn-success">Buy</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+</div>
