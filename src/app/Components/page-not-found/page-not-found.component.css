@@ -1,0 +1,13 @@
+.pageNotFound {
+  margin: 18% 30%;
+  /* text-align: center; */
+  background: linear-gradient(to right, #1166c2, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+  .pageNotFound {
+    margin: 50% 15%;
+  }
+}

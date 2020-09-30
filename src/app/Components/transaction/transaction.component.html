@@ -1,0 +1,55 @@
+<div class="container">
+
+    <div class="transactionForm">
+    <form>
+        <div class="form-group row">
+          <label for="username" class="col-sm-2 col-form-label">User Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" readonly
+             [value]="orderInfo.user.userName" id="username">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="wallet" class="col-sm-2 col-form-label">Balance</label>
+          <div class="col-sm-8">
+            <input type="text"   class="form-control" readonly
+            [value]="orderInfo.user.walletAmount" id="wallet">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="contact" class="col-sm-2 col-form-label">Contact No.</label>
+          <div class="col-sm-8">
+            <input type="text"   class="form-control" readonly
+            [value]="orderInfo.user.contactNo" id="contact">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="product" class="col-sm-2 col-form-label">Product Name</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" readonly
+              [value]="orderInfo.cart.productName" id="product">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="quantity" class="col-sm-2 col-form-label">Total Quantity</label>
+            <div class="col-sm-8">
+              <input type="text"   class="form-control" readonly
+              [value]="orderInfo.totalQuantity" id="quantity">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="totalAmount" class="col-sm-2 col-form-label">Total Amount</label>
+            <div class="col-sm-8">
+              <input type="text"   class="form-control" readonly
+              [value]="orderInfo.totalAmount" id="totalAmount">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <button (click)="buyProduct()" class="btn btn-success">Payment</button>
+            </div>
+        </div>
+
+      </form>
+    </div>
+</div>

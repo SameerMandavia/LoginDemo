@@ -1,0 +1,49 @@
+
+
+<section id="showAllProducts">
+
+    <!-- <div class="allProductsTitle">
+      <h1>All Laptops</h1>
+    </div> -->  
+       <table class="table"> 
+         <tr>
+           <td>
+        <div
+          (click)="onSelect(product)"
+          *ngFor="let product of allProducts| paginate: { itemsPerPage: 4,currentPage: currentPageNo}" 
+          class="col-2 card"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="{{ product.productName }}"
+        >
+          <img
+            [src]="[productImgSrc1]"
+            class="card-img-top"
+            alt="{{ product.productName }}"
+          />
+          <div class="card-body">
+            <h4 class="card-title">{{ product.productName | titlecase }}</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5>Price: {{ product.amount | currency: "INR" }}</h5>
+            </li>
+          </ul>
+          <div class="card-body cardBody">
+            <button class="btn btn-outline-primary btn-sm card-link">
+              View more...
+            </button>
+          </div>
+        </div>
+      </td>
+      </tr>  
+      </table>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="pagination">
+            <pagination-controls (pageChange)="currentPageNo = $event"></pagination-controls>
+          </p>
+        </div>
+      </div>
+  
+  </section>

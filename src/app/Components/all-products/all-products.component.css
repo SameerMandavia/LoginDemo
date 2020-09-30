@@ -1,0 +1,107 @@
+/****************************************** About Products  ******************************************/
+
+#showAllProducts {
+  margin: 5% 2%;
+}
+
+.aboutUsContent {
+  margin: 10%;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.aboutUsContent h1 {
+  text-align: center;
+  background: linear-gradient(to right, #0152a8, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutUsContent p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  background: linear-gradient(to right, #1166c2, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#showAllProducts {
+  background-color: #fafafa;
+}
+
+.card {
+  margin: 2% 4%;
+  display: inline-block;
+  filter: drop-shadow(2px 6px 6px black);
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+}
+.card-title {
+  text-align: center;
+  font-size: 18px;
+}
+
+.cardBody {
+  margin: 0% 6%;
+}
+.list-group-item {
+  text-align: center;
+  font-size: 8px;
+}
+
+/* table {
+  margin-left: 3%;
+} */
+
+.allProductsTitle {
+  text-align: center;
+  margin: 2% 5%;
+  background: linear-gradient(to right, #1166c2, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card-img-top {
+  /* width: 100%; */
+  max-height: 180px;
+}
+.pagination {
+  text-align: center;
+  margin: 2% 2%;
+}
+
+@media screen and (max-width: 1024px) {
+  .allProductsTitle h1 {
+    font-size: 30px;
+  }
+
+  .card {
+    margin: 2% 4%;
+    display: inline-block;
+    filter: drop-shadow(2px 6px 6px black);
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+  /* .cardBody {
+    margin: 2% 2%;
+  } */
+  .list-group-item h5 {
+    font-size: 10px;
+  }
+
+  .card-body .btn {
+    font-size: 12px;
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+  }
+  .pagination {
+    text-align: center;
+    margin: 2% 2%;
+  }
+}

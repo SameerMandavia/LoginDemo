@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/scss/bootstrap.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -88,9 +92,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/scss/bootstrap.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+                        ]
           }
         },
         "lint": {
@@ -119,6 +127,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "LoginDemo"
+    },
+    "Capstore": {
+      "projectType": "library",
+      "root": "projects/capstore",
+      "sourceRoot": "projects/capstore/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/capstore/tsconfig.lib.json",
+            "project": "projects/capstore/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/capstore/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/capstore/src/test.ts",
+            "tsConfig": "projects/capstore/tsconfig.spec.json",
+            "karmaConfig": "projects/capstore/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/capstore/tsconfig.lib.json",
+              "projects/capstore/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "LoginDemo",
+  "cli": {
+    "analytics": false
+  }
 }

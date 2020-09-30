@@ -1,0 +1,63 @@
+<div class="header">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light ">
+    <a class="navbar-brand mr-3" ><i class="fal fa-phone-laptop mr-2 ml-1"></i>CapStore</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item ">
+          <a class="nav-link" [routerLink]="['/home']" data-toggle="tooltip" 
+          data-placement="bottom" title="Home" >Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="#services" *ngIf="loginService.isUserloggedIn" [routerLink]="['/products']" data-toggle="tooltip"
+           data-placement="bottom" title="Products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!(loginService.isUserloggedIn)" data-toggle="tooltip" 
+          data-placement="bottom" title="About Us">About Us</a>
+        </li>
+      </ul>
+      
+        <ul class="navbar-nav links ml-auto" *ngIf="isLoggedIn"> 
+          <li class="nav-item">
+          <a (click)="login()" *ngIf="!(loginService.isUserloggedIn)" data-toggle="tooltip" data-placement="bottom" title="Login" 
+          role="button"  class="nav-link  mr-3">
+                Login
+          </a>
+          </li>
+          <li class="nav-item">
+          <a (click)="signup()" *ngIf="!(loginService.isUserloggedIn)" 
+          data-toggle="tooltip" data-placement="bottom" title="SignUp"
+           role="button" class="nav-link ">
+                SignUp
+          </a>
+        </li>
+        <li class="nav-item">
+          <a (click)="checkProfile()" *ngIf="loginService.isUserloggedIn" role="button" 
+          data-toggle="tooltip" data-placement="bottom" title="Profile"
+           class="nav-link ">
+            Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a (click)="logOut()" *ngIf="loginService.isUserloggedIn" role="button" 
+          data-toggle="tooltip" data-placement="bottom" title="Log Out"
+           class="nav-link ">
+                LogOut
+          </a>
+        </li>
+        </ul>
+      </div>
+    
+  </nav>
+</div>

@@ -16,7 +16,7 @@ import { DataService } from '../../Services/data.service';
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.css'],
+  styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
   /**
@@ -43,6 +43,8 @@ export class TransactionComponent implements OnInit {
     this.order = new Order();
     this.transaction = new Transaction();
     this.orderInfo = new Order();
+    console.log("Transaction Module");
+
   }
 
   //First get User details by user session and Validations for Transaction form.
@@ -52,24 +54,26 @@ export class TransactionComponent implements OnInit {
 
     this.orderInfo = this.dataService.getProductInfo();
     console.log('order info', this.orderInfo);
+    
   }
 
   //Method for buy a Product. In which order details has to assign in Transaction Variable.
   buyProduct() {
+    this.transaction.user = this.orderInfo.user;
     this.transaction.order = this.orderInfo;
-    this.transaction.user= this.orderInfo.user;
+    
     this.transactionService
       .addTransaction(this.transaction)
       .subscribe((payment) => {
         console.log(payment, 'Transaction');
-
         alert('Payment successful!! Thank you for ordering!');
-      });
+      });      
     this.transactionService.saveOrder(this.orderInfo).subscribe((order) => {
+      this.order.cart = this.orderInfo.cart;
       console.log((this.order = order));
     });
 
     console.log(this.transaction);
-    this.router.navigate(['products']);
+    this.router.navigate(['/products']);
   }
 }

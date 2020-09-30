@@ -1,0 +1,21 @@
+
+footer{
+     position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #0062CC;
+    height: 70px; 
+
+
+}
+
+.content
+{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+

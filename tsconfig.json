@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/capstore/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/capstore/tsconfig.spec.json"
     }
 ]
 }
