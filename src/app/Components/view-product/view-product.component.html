@@ -23,7 +23,6 @@
                 <td>{{productByName.amount|currency:'INR'}}</td>
                 <td><button (click)="addProduct(productByName)" class="btn btn-secondary btn-sm"><i class="fa fa-plus-circle"></i></button>{{quantity}}
                     <button (click)="removeProduct(productByName)" [disabled]='quantity==1' class="btn btn-secondary btn-sm"><i class="fa fa-minus"></i></button></td>
-                
                 <td >{{totalAmount|currency:'INR'}}</td>
                 <td><button (click)="payment()" class="btn btn-success">Buy</button></td>
               </tr>

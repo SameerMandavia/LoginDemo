@@ -98,10 +98,11 @@ export class ViewProductComponent implements OnInit {
   //To decrease the product quantity and also decrease its Amount by quantity.
   removeProduct(product: ProductItem) {
     if (this.removeItem.indexOf(product) != 0) {
-      this.removeItem.splice(this.removeItem.indexOf(product), 1);
+      // this.removeItem.splice(this.removeItem.indexOf(product), 1);
+      this.removeItem.splice(1);
+
       this.quantity--;
       this.totalAmount = product.amount * this.quantity;
-      //this.totalAmount -=;
 
       console.log(this.totalAmount, 'remove');
     }
