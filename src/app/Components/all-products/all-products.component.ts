@@ -20,8 +20,7 @@ export class AllProductsComponent implements OnInit {
 
   //Injected Services and Router for navigation purpose.
   constructor(private homeService: HomeService, private router: Router) {
-    console.log("AllProducts Module");
-    
+    console.log("AllProducts Module"); 
   }
 
   //Always first it will displaying all products.
