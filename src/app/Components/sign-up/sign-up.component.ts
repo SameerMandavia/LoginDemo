@@ -66,7 +66,12 @@ export class SignUpComponent implements OnInit {
       this.userdetails = details;
       console.log(this.userdetails);
       alert('Account created Successfully ' + this.user.userName);
-    });
-    this.router.navigate(['/home']);
+      this.router.navigate(['/home']);
+    },
+    (error)=>{
+      console.log(error);
+    }
+    );
+    
   }
 }
